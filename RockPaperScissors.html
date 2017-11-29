@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Rock, Paper Scissors</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+  </head>
+  <body>
+
+    <div class="container">
+
+      <div class="jumbotron">
+          <h1 class="text-center"><strong>Rock Paper Scissors</strong></h1>
+      </div>
+
+      <div class="row">
+        <div class="col-md-8"><!-- col 1 -->
+          <div class="panel panel-default">
+            <div class="panel-body">
+              <h3>Choose 'r', 'p' or 's' to play.</h3>
+              <h4>You chose <span id="playerChoice">nothing yet</span> and the computer chose <span id="computerChoice">nothing yet.  </span>.</h4>
+              <h4 id="resultIs"></h4>
+            </div><!-- end panel-body -->
+          </div><!-- end panel -->
+        </div><!-- end col 1 -->
+        <div class="col-md-4"><!-- col 2 -->
+          <div class="container"><!-- scores -->
+            <ul>
+              <li><h2>Wins: <span id="winScore">0</span></h2></li>
+              <li><h2>Losses: <span id="lossScore">0</span></h2></li>
+              <li><h2>Ties: <span id="tieScore">0</span></h2></li>
+            </ul>
+          </div><!-- end of score container -->
+        </div><!-- end of col 2 -->
+      </div><!--end row -->
+
+      <script type="text/javascript">
+
+        var computerChoices = ["rock", "paper", "scissors"];
+        var wins = 0;
+        var losses = 0;
+        var ties = 0;
+        var player = document.getElementById("playerChoice");
+        var computer = document.getElementById("computerChoice");
+        var result = document.getElementById("resultIs");
+
+        document.onkeyup = function(event) {
+
+          var ix = (Math.floor((Math.random()*3)+1)) -1;
+          console.log("computer: ", ix, computerChoices[ix]);
+          computerChoice.textContent = computerChoices[ix];
+
+          // console.log("event: ", event);
+
+          if(event.key == "r"){
+            playerChoice.textContent = "rock";
+            if(computerChoices[ix] == "scissors"){
+              wins++;
+              resultIs.textContent = "That's a win!";
+            } else if(computerChoices[ix] == "paper"){
+              losses++;
+              resultIs.textContent = "That's a loss!";
+            } else{
+              ties++;
+              resultIs.textContent = "That's a tie!";
+            }
+          } else if (event.key == "p") {
+            playerChoice.textContent = "paper";
+            if(computerChoices[ix] == "rock"){
+              wins++;
+              resultIs.textContent = "That's a win!";
+            } else if(computerChoices[ix] == "scissors"){
+              losses++;
+              resultIs.textContent = "That's a loss!";
+            } else{
+              ties++;
+              resultIs.textContent = "That's a tie!";
+            }
+          } else if (event.key == "s") {
+            playerChoice.textContent = "scissors";
+            if(computerChoices[ix] == "paper"){
+              wins++;
+              resultIs.textContent = "That's a win!";
+            } else if(computerChoices[ix] == "rock"){
+              losses++;
+              resultIs.textContent = "That's a loss!";
+            } else{
+              ties++;
+              resultIs.textContent = "That's a tie!";
+            }
+          } else {
+            playerChoice.textContent = "an invalid key";
+            resultIs.textContent = "Try again.";
+          }
+
+          winScore.textContent = wins;
+          lossScore.textContent = losses;
+          tieScore.textContent = ties;
+
+          // console.log('wins: ', wins, 'losses: ', losses, ', ties: ', ties);
+
+        }<!-- end of function -->
+      </script><!-- end of javascript -->
+    </div><!-- end of container div -->
+  </body>
+</html>
