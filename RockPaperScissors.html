@@ -14,7 +14,7 @@
       </div>
 
       <div class="row">
-        <div class="col-md-8"><!-- col 1 -->
+        <div class="col-md-9"><!-- col 1 -->
           <div class="panel panel-default">
             <div class="panel-body">
               <h3>Choose 'r', 'p' or 's' to play.</h3>
@@ -23,7 +23,7 @@
             </div><!-- end panel-body -->
           </div><!-- end panel -->
         </div><!-- end col 1 -->
-        <div class="col-md-4"><!-- col 2 -->
+        <div class="col-md-3"><!-- col 2 -->
           <div class="container"><!-- scores -->
             <ul>
               <li><h2>Wins: <span id="winScore">0</span></h2></li>
@@ -58,40 +58,40 @@
               wins++;
               resultIs.textContent = "That's a win!";
             } else if(computerChoices[ix] == "paper"){
-              losses++;
-              resultIs.textContent = "That's a loss!";
-            } else{
-              ties++;
-              resultIs.textContent = "That's a tie!";
-            }
+                losses++;
+                resultIs.textContent = "That's a loss!";
+              } else{
+                  ties++;
+                  resultIs.textContent = "That's a tie!";
+                }
           } else if (event.key == "p") {
             playerChoice.textContent = "paper";
             if(computerChoices[ix] == "rock"){
               wins++;
               resultIs.textContent = "That's a win!";
             } else if(computerChoices[ix] == "scissors"){
-              losses++;
-              resultIs.textContent = "That's a loss!";
-            } else{
-              ties++;
-              resultIs.textContent = "That's a tie!";
-            }
+                losses++;
+                resultIs.textContent = "That's a loss!";
+              } else{
+                  ties++;
+                  resultIs.textContent = "That's a tie!";
+                }
           } else if (event.key == "s") {
             playerChoice.textContent = "scissors";
             if(computerChoices[ix] == "paper"){
               wins++;
               resultIs.textContent = "That's a win!";
             } else if(computerChoices[ix] == "rock"){
-              losses++;
-              resultIs.textContent = "That's a loss!";
-            } else{
-              ties++;
-              resultIs.textContent = "That's a tie!";
-            }
+                losses++;
+                resultIs.textContent = "That's a loss!";
+              } else{
+                  ties++;
+                  resultIs.textContent = "That's a tie!";
+                }
           } else {
             playerChoice.textContent = "an invalid key";
             resultIs.textContent = "Try again.";
-          }
+            }
 
           winScore.textContent = wins;
           lossScore.textContent = losses;
@@ -99,7 +99,7 @@
 
           // console.log('wins: ', wins, 'losses: ', losses, ', ties: ', ties);
 
-        }<!-- end of function -->
+        } // end of function
       </script><!-- end of javascript -->
     </div><!-- end of container div -->
   </body>
