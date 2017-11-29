@@ -36,21 +36,23 @@
 
       <script type="text/javascript">
 
+        // variable declaration 
         var computerChoices = ["rock", "paper", "scissors"];
         var wins = 0;
         var losses = 0;
         var ties = 0;
-        var player = document.getElementById("playerChoice");
-        var computer = document.getElementById("computerChoice");
-        var result = document.getElementById("resultIs");
+        // var player = document.getElementById("playerChoice");
+        // var computer = document.getElementById("computerChoice");
+        // var result = document.getElementById("resultIs");
 
         document.onkeyup = function(event) {
 
-          var ix = (Math.floor((Math.random()*3)+1)) -1;
-          console.log("computer: ", ix, computerChoices[ix]);
-          computerChoice.textContent = computerChoices[ix];
-
           // console.log("event: ", event);
+
+          // return a random number between 0 and 2
+          var ix = (Math.floor((Math.random()*3)+1)) -1;
+          //console.log("computer: ", ix, computerChoices[ix]);
+          computerChoice.textContent = computerChoices[ix];
 
           if(event.key == "r"){
             playerChoice.textContent = "rock";
